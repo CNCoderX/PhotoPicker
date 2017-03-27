@@ -29,3 +29,12 @@ new PhotoPicker.Builder(this)
 	.circleCrop(true)
 	.create(1);
 ```
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	if (resultCode == RESULT_OK) {
+	    ArrayList<IImage> images = data.getParcelableArrayListExtra(PhotoPicker.EXTRA_DATA);
+	    ......
+	}
+}
+```
