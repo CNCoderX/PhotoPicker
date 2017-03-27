@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">图库</string>
+
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="image">图片</string>
+    <string name="all_image">所有图片</string>
+    <string name="saving_image">保存图片</string>
+    <string name="crop_wait">请稍后…</string>
+    <string name="crop">裁剪</string>
+    <string name="preview">预览</string>
+    <string name="commit">提交</string>
+    <string name="commit_count">提交 (%1$d/%2$d)</string>
+    <string name="image_max_count_tip">最多只能选择%1$s张图片</string>
+    <string name="image_size">共%1$d张</string>
+    <string name="zoom_in">放大</string>
+    <string name="zoom_out">缩小</string>
+    <string name="take_photo">拍摄照片</string>
+    <string name="open_camera_failure">打开相机失败</string>
+</resources>

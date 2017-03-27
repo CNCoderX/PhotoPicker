@@ -1,0 +1,12 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.GalleryActivity">
+
+    <item
+        android:id="@+id/action_positive"
+        android:title="positive"
+        app:actionProviderClass="com.cncoderx.photopicker.widget.ToolbarActionButton"
+        app:showAsAction="always" />
+</menu>

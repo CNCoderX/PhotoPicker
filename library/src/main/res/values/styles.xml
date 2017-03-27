@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="PhotoPickerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#2A2A2F</item>
+        <item name="colorPrimaryDark">#2A2A2F</item>
+        <item name="colorAccent">#2A2A2F</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="GalleryBottomBarAnim">
+        <item name="android:windowEnterAnimation">@anim/bottom_bar_push_out</item>
+        <item name="android:windowExitAnimation">@anim/bottom_bar_push_in</item>
+    </style>
+</resources>
