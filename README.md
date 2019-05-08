@@ -1,7 +1,7 @@
 # PhotoPicker
 ### 添加依赖关系
 ```gradle
-compile 'com.github.CNCoderX:PhotoPicker:1.0.0'
+compile 'com.github.CNCoderX:PhotoPicker:1.0.1'
 ```
 ### 使用方法
 ##### 添加权限
