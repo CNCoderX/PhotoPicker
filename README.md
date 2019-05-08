@@ -10,6 +10,7 @@ compile 'com.github.CNCoderX:PhotoPicker:1.0.0'
 ```
 ##### 在Android7.0上添加FileProvider
 ```xml
+// 在AndroidManifest.xml中添加
 <provider
     android:name="android.support.v4.content.FileProvider"
     android:authorities="${applicationId}.provider"
@@ -20,6 +21,12 @@ compile 'com.github.CNCoderX:PhotoPicker:1.0.0'
             android:name="android.support.FILE_PROVIDER_PATHS"
             android:resource="@xml/file_paths" />
 </provider>
+
+// 新建xml/file_paths.xml
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="external" path="DCIM"/>
+</paths>
 ```
 
 ##### 注册activity
