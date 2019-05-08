@@ -1,9 +1,13 @@
 package com.cncoderx.test.photopicker;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.cncoderx.photopicker.PhotoPicker;
 import com.cncoderx.photopicker.core.IImage;
@@ -28,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestPermissions();
+
         setContentView(R.layout.activity_main);
         spCount = (Spinner) findViewById(R.id.sp_photo_picker_count);
         spAspect = (Spinner) findViewById(R.id.sp_photo_picker_aspect);
@@ -35,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         cbCrop = (CheckBox) findViewById(R.id.cb_photo_picker_crop);
         cbCircle = (CheckBox) findViewById(R.id.cb_photo_picker_circle_crop);
         gridView = (GridView) findViewById(R.id.gv_photo_picker_photos);
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(this, new String[] {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        }, 1);
     }
 
     public void onSelect(View view) {
@@ -49,6 +62,17 @@ public class MainActivity extends AppCompatActivity {
                 .circleCrop(cbCircle.isChecked())
 //                .setCrop(cbCrop.isChecked())
                 .create(1);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            // Todo
+        }else {
+            Toast.makeText(MainActivity.this, "拒绝授权", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
     @Override

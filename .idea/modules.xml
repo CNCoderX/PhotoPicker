@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PhotoPicker.iml" filepath="$PROJECT_DIR$/PhotoPicker.iml" />
+      <module fileurl="file://D:\android\git\github\PhotoPicker\PhotoPicker.iml" filepath="D:\android\git\github\PhotoPicker\PhotoPicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\android\git\github\PhotoPicker\app\app.iml" filepath="D:\android\git\github\PhotoPicker\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://D:\android\git\github\PhotoPicker\library\library.iml" filepath="D:\android\git\github\PhotoPicker\library\library.iml" />
     </modules>
   </component>
 </project>
