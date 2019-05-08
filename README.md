@@ -8,6 +8,20 @@ compile 'com.github.CNCoderX:PhotoPicker:1.0.0'
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
+##### 在Android7.0上添加FileProvider
+```xml
+<provider
+    android:name="android.support.v4.content.FileProvider"
+    android:authorities="${applicationId}.provider"
+    android:exported="false"
+    android:grantUriPermissions="true">
+
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+</provider>
+```
+
 ##### 注册activity
 ```java
 <activity
