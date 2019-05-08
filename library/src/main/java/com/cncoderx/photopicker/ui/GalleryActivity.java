@@ -3,12 +3,14 @@ package com.cncoderx.photopicker.ui;
 import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.FileProvider;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -217,7 +219,13 @@ public class GalleryActivity extends AppCompatActivity implements
             String dateToken = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA).format(new Date());
             String filename = "IMG_" + dateToken + ".jpg";
             mStorageFile = new File(mStorageDir, filename);
-            captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mStorageFile));
+            Uri uri;
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+                uri = Uri.fromFile(mStorageFile);
+            } else {
+                uri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", mStorageFile);
+            }
+            captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
             startActivityForResult(captureIntent, REQUEST_TAKE_PHOTO);
         } else {
             Toast.makeText(getApplicationContext(), R.string.open_camera_failure, Toast.LENGTH_SHORT).show();
